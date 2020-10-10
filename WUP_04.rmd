@@ -37,7 +37,9 @@ $H_a$ There is a significant difference in average score on the WORDSUM test bet
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
 ```{r}
-boxplot(WORDSUM~DEGREE,data=mydata)
+basicCN <- ggplot(mydata,aes(x=DEGREE,y=WORDSUM))
+
+basicCN + geom_boxplot()
 ```
 
 ### Numerical Descriptive Results
@@ -47,7 +49,7 @@ boxplot(WORDSUM~DEGREE,data=mydata)
 ```{r}
 favstats(WORDSUM~DEGREE,data=mydata)
 ```
-
+Junior college is averaging more than Bachelor students and real close to what graduate students are doing. High School and LT high school are on the lower end of the average.
 
 ## Inferential Results
 
@@ -58,12 +60,17 @@ favstats(WORDSUM~DEGREE,data=mydata)
 model1 <- aov(WORDSUM~DEGREE,data=mydata)
 summary.aov(model1)
 ```
+This is rejecting the null hypothesis.It's low with a probability of 2 and 10,000.
+
 ```{r}
 #we specify the margins starting at the bottom and proceeding clockwise - thus 8.7 is the left side margin to hold the names of the factors
-par(mar = c(3, 12, 2, 2))
+par(mar = c(3, 16, 2, 2))
 plot(TukeyHSD(model1),las=2)
 ```
+Highschool and Junior highschool are different from graduates with a significant difference. Nothing else is different from anything else.
 
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  e GeorWatch the chapter 6 videos from thgeTown videos collection.!-->
+
+In conclusion I don't see any relationship. It could be said that Lt highschool and Lt junior school have more vigorus studies that could explain why they did more than the graduate students.
