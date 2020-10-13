@@ -67,10 +67,11 @@ This is rejecting the null hypothesis.It's low with a probability of 2 and 10,00
 par(mar = c(3, 16, 2, 2))
 plot(TukeyHSD(model1),las=2)
 ```
+
 Highschool and Junior highschool are different from graduates with a significant difference. Nothing else is different from anything else.
 
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  e GeorWatch the chapter 6 videos from thgeTown videos collection.!-->
 
-In conclusion I don't see any relationship. It could be said that Lt highschool and Lt junior school have more vigorus studies that could explain why they did more than the graduate students.
+The P value is 0.000236 which means that 2 out of 10000 times we will get a result that the null hypothesis is true. We don't believe the null hypothesis is true since it happens so infrequently, so we will reject the null hypothesis. To further explain what we are saying the result of a TukeyHSD test shows that the wordsum test between LT highschool and graduate are different, also highschool and graduate are different. There is no other significant diferences than those two stated. 
